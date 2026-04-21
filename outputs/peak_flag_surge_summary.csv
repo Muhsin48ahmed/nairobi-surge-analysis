@@ -1,0 +1,5 @@
+peak_dimension,is_morning_peak,n_trips,mean_surge_multiplier,surge_rate_pct,is_evening_peak
+Morning peak,0.0,3083921,0.06303153023375112,19.62,
+Morning peak,1.0,619485,0.04501169681267504,16.13,
+Evening peak,,2557261,0.04412397150701473,15.58,0.0
+Evening peak,,1146145,0.09547816310327227,26.74,1.0

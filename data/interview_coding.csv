@@ -1,0 +1,36 @@
+id,role,experience_or_usage,theme_response_surge,theme_earnings_or_cost,theme_fairness,theme_regulation_or_design,raw_notes
+D1,Driver,3 years,moves_to_hotspot; stays_online_longer,surge_short; fuel_cost_high,somewhat_fair,reduce_commission; longer_surge,Moves to CBD / Westlands during surge
+D2,Driver,1.5 years,moves_to_airport,higher_rain_earnings; commission_high,not_fair,surge_forecast,Rain improves earnings
+D3,Driver,4 years,peak_hour_online,moderate_increase; fuel_high,mixed,reduce_commission,Wants transparency
+D4,Driver,2 years,moves_to_cbd,slight_increase; maintenance_high,mixed,better_communication,CBD focus
+D5,Driver,5 years,waits_hotspots,weekend_high; fuel_high,mostly_fair,lower_commission,Surge unpredictable
+D6,Driver,3 years,accepts_surge,higher_income; traffic_cost,fair,longer_surge,Accepts all surge rides
+D7,Driver,2 years,moves_westlands,slight_increase; fuel_high,not_fair,transparency,Westlands focus
+D8,Driver,6 years,night_driving,event_high; maintenance_high,fair,surge_alerts,Night driving / events
+D9,Driver,4 years,waits_busy_areas,moderate; commission_high,mixed,reduce_fees,Busy areas
+D10,Driver,2 years,longer_hours,small_increase; fuel_high,not_fair,transparency,Works longer hours
+D11,Driver,3 years,moves_hotspot,better_earnings; maintenance_high,fair,lower_commission,Hotspot movement
+D12,Driver,1 year,accepts_surge,slight_increase; fuel_high,mixed,alerts,Accepts surge
+D13,Driver,5 years,airport_focus,good_peak; traffic,fair,reduce_commission,Airport rides
+D14,Driver,2 years,waits_surge,moderate; fuel_high,mixed,transparency,Waits for surge
+D15,Driver,3 years,rush_hour,slight_increase; commission_high,not_fair,reduce_fees,Rush hour
+P1,Passenger,weekly,waits_for_price_drop,trip_too_expensive,not_fair,wants_price_cap,Rain surge CBD to South B
+P2,Passenger,daily,books_anyway,budget_impact,mixed,wants_transparency,Airport expensive
+P3,Passenger,weekly,uses_matatu,cost_high,not_fair,limit_surge,Weekend surge
+P4,Passenger,occasional,waits,delay_cost,mixed,alerts,Concert night
+P5,Passenger,daily,uses_other_app,high_cost,not_fair,price_cap,Rain surge
+P6,Passenger,weekly,waits,late_to_work,mixed,transparency,Morning rush
+P7,Passenger,daily,books_anyway,budget_impact,mixed,cap_surge,Airport
+P8,Passenger,weekly,uses_boda,cost_high,not_fair,alerts,Evening surge
+P9,Passenger,occasional,waits,delay,mixed,limit_surge,Rain
+P10,Passenger,daily,alternative,increased_cost,not_fair,transparency,Rush hour
+P11,Passenger,weekly,waits,delay,mixed,cap_prices,Weekend
+P12,Passenger,daily,books_anyway,budget,mixed,alerts,Airport
+P13,Passenger,occasional,matatu,cancel_trip,not_fair,limit_surge,Rain
+P14,Passenger,weekly,waits,delay,mixed,transparency,Night surge
+P15,Passenger,daily,alternative,high_cost,not_fair,cap_surge,Rush hour
+E1,Expert,researcher,fairness_concern,high_fares_emergency,not_equitable,price_cap; transparency,Emergency pricing; data transparency
+E2,Expert,policy,driver_inequality,low_driver_share,not_fair,regulation; min_driver_earnings,Weak oversight; stakeholder collaboration
+E3,Expert,planner,accessibility_issue,cost_barrier,not_fair,cap_pricing; gov_involvement,Sustainable transport
+E4,Expert,manager,passenger_complaints,demand_imbalance,mixed,controlled_surge; tech_improvements,Dynamic but transparent pricing
+E5,Expert,economist,market_imbalance,price_volatility; no_fare_regulation,mixed,price_bands; balanced_incentives,More research needed

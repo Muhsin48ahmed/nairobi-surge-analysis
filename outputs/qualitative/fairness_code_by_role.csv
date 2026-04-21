@@ -1,0 +1,11 @@
+role,fairness_code,n
+Driver,fair,4
+Driver,mixed,5
+Driver,mostly_fair,1
+Driver,not_fair,4
+Driver,somewhat_fair,1
+Expert,mixed,2
+Expert,not_equitable,1
+Expert,not_fair,2
+Passenger,mixed,8
+Passenger,not_fair,7

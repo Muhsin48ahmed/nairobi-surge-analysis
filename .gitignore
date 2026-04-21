@@ -1,0 +1,41 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+notebooks/pdf_exports/
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Streamlit
+.streamlit/secrets.toml
+
+# Large / derived data — do NOT commit
+outputs/trips_processed.parquet
+outputs/models/*.joblib
+*.parquet
+*.joblib
+
+# Raw datasets (too large for Git; keep local only)
+data/New Files/trip_analysis_data.json
+data/trips_raw.csv
+
+# Logs / temporary
+*.log
+*.tmp
+*.swp

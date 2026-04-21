@@ -1,0 +1,14 @@
+{
+  "modeling_config": {
+    "target_mode": "real_surge",
+    "surge_event_threshold": 0.0,
+    "surge_event_threshold_material": 1.2,
+    "surge_decision_threshold": 0.4,
+    "speed_cap_kmh": 140.0,
+    "local_tz": "Africa/Nairobi"
+  },
+  "target_mode_used": "real_surge",
+  "surge_event_threshold": 0.0,
+  "surge_event_threshold_material": 1.2,
+  "weather_merge": "OK (merged on ts_hour) from weather_nairobi_hourly.csv"
+}

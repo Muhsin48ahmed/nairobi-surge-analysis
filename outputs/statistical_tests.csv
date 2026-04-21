@@ -1,0 +1,3 @@
+test,statistic,p_value,n_a_rain,n_b_dry,effect_median_rain_minus_dry,dof
+"Mann-Whitney U (rain > dry, surge_multiplier)",1346781387045.0,0.0,931756.0,2771650.0,0.0,
+Chi-square (is_weekend × surge_event),14551.700842937245,0.0,,,,1.0

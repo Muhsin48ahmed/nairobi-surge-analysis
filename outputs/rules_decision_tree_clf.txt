@@ -1,0 +1,382 @@
+|--- speed_kmh <= -0.25
+|   |--- hour_sin <= -0.18
+|   |   |--- dow_sin <= -0.29
+|   |   |   |--- month_cos <= -0.97
+|   |   |   |   |--- hour_sin <= -1.00
+|   |   |   |   |   |--- trip_bearing_deg <= -1.04
+|   |   |   |   |   |   |--- high_demand_zone <= 0.79
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- high_demand_zone >  0.79
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |--- trip_bearing_deg >  -1.04
+|   |   |   |   |   |   |--- total_time <= -0.69
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- total_time >  -0.69
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |--- hour_sin >  -1.00
+|   |   |   |   |   |--- wind_kph <= -0.88
+|   |   |   |   |   |   |--- precip_mm <= 0.98
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- precip_mm >  0.98
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |--- wind_kph >  -0.88
+|   |   |   |   |   |   |--- precip_mm <= 0.18
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- precip_mm >  0.18
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |--- month_cos >  -0.97
+|   |   |   |   |--- speed_kmh <= -1.05
+|   |   |   |   |   |--- wind_kph <= -0.34
+|   |   |   |   |   |   |--- humidity <= 0.73
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- humidity >  0.73
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |--- wind_kph >  -0.34
+|   |   |   |   |   |   |--- trip_haversine_km <= -1.14
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- trip_haversine_km >  -1.14
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |--- speed_kmh >  -1.05
+|   |   |   |   |   |--- wind_kph <= -0.50
+|   |   |   |   |   |   |--- humidity <= 0.71
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- humidity >  0.71
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |--- wind_kph >  -0.50
+|   |   |   |   |   |   |--- duration_hr <= -0.75
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- duration_hr >  -0.75
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |--- dow_sin >  -0.29
+|   |   |   |--- high_demand_zone <= 0.79
+|   |   |   |   |--- speed_kmh <= -0.99
+|   |   |   |   |   |--- hour_cos <= -0.20
+|   |   |   |   |   |   |--- month_cos <= -0.20
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- month_cos >  -0.20
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |--- hour_cos >  -0.20
+|   |   |   |   |   |   |--- precip_mm <= -0.18
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- precip_mm >  -0.18
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |--- speed_kmh >  -0.99
+|   |   |   |   |   |--- trip_bearing_deg <= -1.05
+|   |   |   |   |   |   |--- dow_sin <= 0.88
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- dow_sin >  0.88
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |--- trip_bearing_deg >  -1.05
+|   |   |   |   |   |   |--- hour_cos <= -0.20
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- hour_cos >  -0.20
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |--- high_demand_zone >  0.79
+|   |   |   |   |--- is_evening_peak_1 <= 0.50
+|   |   |   |   |   |--- month_cos <= 0.69
+|   |   |   |   |   |   |--- hour_15 <= 0.50
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- hour_15 >  0.50
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |--- month_cos >  0.69
+|   |   |   |   |   |   |--- hour_cos <= 0.37
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- hour_cos >  0.37
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |--- is_evening_peak_1 >  0.50
+|   |   |   |   |   |--- hour_cos <= 0.57
+|   |   |   |   |   |   |--- month_cos <= 0.69
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- month_cos >  0.69
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |--- hour_cos >  0.57
+|   |   |   |   |   |   |--- temp_c <= -0.65
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- temp_c >  -0.65
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |--- hour_sin >  -0.18
+|   |   |--- hour_sin <= 1.59
+|   |   |   |--- month_cos <= -0.20
+|   |   |   |   |--- hour_23 <= 0.50
+|   |   |   |   |   |--- dayofweek_0 <= 0.50
+|   |   |   |   |   |   |--- temp_c <= 1.02
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- temp_c >  1.02
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |--- dayofweek_0 >  0.50
+|   |   |   |   |   |   |--- wind_kph <= -0.06
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- wind_kph >  -0.06
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |--- hour_23 >  0.50
+|   |   |   |   |   |--- humidity <= 1.40
+|   |   |   |   |   |   |--- wind_kph <= -0.15
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- wind_kph >  -0.15
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |--- humidity >  1.40
+|   |   |   |   |   |   |--- dow_sin <= -0.29
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- dow_sin >  -0.29
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |--- month_cos >  -0.20
+|   |   |   |   |--- hour_cos <= 0.37
+|   |   |   |   |   |--- humidity <= -0.39
+|   |   |   |   |   |   |--- dayofweek_5 <= 0.50
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- dayofweek_5 >  0.50
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |--- humidity >  -0.39
+|   |   |   |   |   |   |--- precip_mm <= -0.18
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- precip_mm >  -0.18
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |--- hour_cos >  0.37
+|   |   |   |   |   |--- humidity <= 1.20
+|   |   |   |   |   |   |--- high_demand_zone <= 0.79
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- high_demand_zone >  0.79
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |--- humidity >  1.20
+|   |   |   |   |   |   |--- temp_c <= -1.19
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- temp_c >  -1.19
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |--- hour_sin >  1.59
+|   |   |   |--- is_morning_peak_1 <= 0.50
+|   |   |   |   |--- dow_cos <= 1.19
+|   |   |   |   |   |--- temp_c <= -1.97
+|   |   |   |   |   |   |--- month_sin <= -0.56
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- month_sin >  -0.56
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |--- temp_c >  -1.97
+|   |   |   |   |   |   |--- trip_haversine_km <= 0.96
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- trip_haversine_km >  0.96
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |--- dow_cos >  1.19
+|   |   |   |   |   |--- precip_mm <= 0.80
+|   |   |   |   |   |   |--- hour_cos <= 0.57
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- hour_cos >  0.57
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |--- precip_mm >  0.80
+|   |   |   |   |   |   |--- trip_haversine_km <= 0.48
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- trip_haversine_km >  0.48
+|   |   |   |   |   |   |   |--- class: 1
+|   |   |   |--- is_morning_peak_1 >  0.50
+|   |   |   |   |--- dow_cos <= 1.19
+|   |   |   |   |   |--- trip_haversine_km <= 0.81
+|   |   |   |   |   |   |--- month_cos <= 0.69
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- month_cos >  0.69
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |--- trip_haversine_km >  0.81
+|   |   |   |   |   |   |--- trip_bearing_deg <= 0.94
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- trip_bearing_deg >  0.94
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |--- dow_cos >  1.19
+|   |   |   |   |   |--- trip_haversine_km <= 0.87
+|   |   |   |   |   |   |--- month_sin <= -0.56
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- month_sin >  -0.56
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |--- trip_haversine_km >  0.87
+|   |   |   |   |   |   |--- trip_bearing_deg <= 0.79
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- trip_bearing_deg >  0.79
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|--- speed_kmh >  -0.25
+|   |--- hour_sin <= -0.18
+|   |   |--- dow_sin <= -0.29
+|   |   |   |--- month_cos <= -0.97
+|   |   |   |   |--- wind_kph <= -0.88
+|   |   |   |   |   |--- dow_cos <= 0.33
+|   |   |   |   |   |   |--- hour_cos <= 1.28
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- hour_cos >  1.28
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |--- dow_cos >  0.33
+|   |   |   |   |   |   |--- total_distance <= 0.92
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- total_distance >  0.92
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |--- wind_kph >  -0.88
+|   |   |   |   |   |--- hour_sin <= -1.00
+|   |   |   |   |   |   |--- trip_bearing_deg <= -0.56
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- trip_bearing_deg >  -0.56
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |--- hour_sin >  -1.00
+|   |   |   |   |   |   |--- precip_mm <= 0.18
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- precip_mm >  0.18
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |--- month_cos >  -0.97
+|   |   |   |   |--- total_distance <= 0.98
+|   |   |   |   |   |--- trip_bearing_deg <= -0.15
+|   |   |   |   |   |   |--- temp_c <= -1.14
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- temp_c >  -1.14
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |--- trip_bearing_deg >  -0.15
+|   |   |   |   |   |   |--- hour_cos <= -0.20
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- hour_cos >  -0.20
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |--- total_distance >  0.98
+|   |   |   |   |   |--- high_demand_zone <= 0.79
+|   |   |   |   |   |   |--- trip_haversine_km <= 1.48
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- trip_haversine_km >  1.48
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |--- high_demand_zone >  0.79
+|   |   |   |   |   |   |--- trip_bearing_deg <= 0.84
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- trip_bearing_deg >  0.84
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |--- dow_sin >  -0.29
+|   |   |   |--- high_demand_zone <= 0.79
+|   |   |   |   |--- trip_bearing_deg <= -0.71
+|   |   |   |   |   |--- distance_vs_haversine_ratio <= -0.02
+|   |   |   |   |   |   |--- speed_kmh <= 0.30
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- speed_kmh >  0.30
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |--- distance_vs_haversine_ratio >  -0.02
+|   |   |   |   |   |   |--- trip_bearing_deg <= -0.97
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- trip_bearing_deg >  -0.97
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |--- trip_bearing_deg >  -0.71
+|   |   |   |   |   |--- speed_kmh <= 0.77
+|   |   |   |   |   |   |--- temp_c <= -0.09
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- temp_c >  -0.09
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |--- speed_kmh >  0.77
+|   |   |   |   |   |   |--- trip_haversine_km <= 0.39
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- trip_haversine_km >  0.39
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |--- high_demand_zone >  0.79
+|   |   |   |   |--- hour_cos <= 0.57
+|   |   |   |   |   |--- month_cos <= 0.69
+|   |   |   |   |   |   |--- trip_bearing_deg <= -0.93
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- trip_bearing_deg >  -0.93
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |--- month_cos >  0.69
+|   |   |   |   |   |   |--- trip_bearing_deg <= -0.87
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- trip_bearing_deg >  -0.87
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |--- hour_cos >  0.57
+|   |   |   |   |   |--- humidity <= 1.14
+|   |   |   |   |   |   |--- precip_mm <= 0.27
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- precip_mm >  0.27
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |--- humidity >  1.14
+|   |   |   |   |   |   |--- dow_cos <= -0.75
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- dow_cos >  -0.75
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |--- hour_sin >  -0.18
+|   |   |--- hour_sin <= 1.59
+|   |   |   |--- humidity <= 1.40
+|   |   |   |   |--- speed_kmh <= 0.43
+|   |   |   |   |   |--- trip_bearing_deg <= 0.03
+|   |   |   |   |   |   |--- dayofweek_5 <= 0.50
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- dayofweek_5 >  0.50
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |--- trip_bearing_deg >  0.03
+|   |   |   |   |   |   |--- month_cos <= 0.69
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- month_cos >  0.69
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |--- speed_kmh >  0.43
+|   |   |   |   |   |--- month_cos <= -0.97
+|   |   |   |   |   |   |--- dayofweek_0 <= 0.50
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- dayofweek_0 >  0.50
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |--- month_cos >  -0.97
+|   |   |   |   |   |   |--- high_demand_zone <= 0.79
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- high_demand_zone >  0.79
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |--- humidity >  1.40
+|   |   |   |   |--- hour_23 <= 0.50
+|   |   |   |   |   |--- high_demand_zone <= 0.79
+|   |   |   |   |   |   |--- trip_bearing_deg <= -0.80
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- trip_bearing_deg >  -0.80
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |--- high_demand_zone >  0.79
+|   |   |   |   |   |   |--- trip_haversine_km <= -0.07
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- trip_haversine_km >  -0.07
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |--- hour_23 >  0.50
+|   |   |   |   |   |--- wind_kph <= -0.79
+|   |   |   |   |   |   |--- dow_sin <= -0.29
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- dow_sin >  -0.29
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |--- wind_kph >  -0.79
+|   |   |   |   |   |   |--- humidity <= 1.45
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- humidity >  1.45
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |--- hour_sin >  1.59
+|   |   |   |--- speed_kmh <= 0.44
+|   |   |   |   |--- dow_cos <= 1.19
+|   |   |   |   |   |--- is_morning_peak_1 <= 0.50
+|   |   |   |   |   |   |--- temp_c <= -1.97
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- temp_c >  -1.97
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |--- is_morning_peak_1 >  0.50
+|   |   |   |   |   |   |--- month_cos <= 0.69
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- month_cos >  0.69
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |--- dow_cos >  1.19
+|   |   |   |   |   |--- is_morning_peak_1 <= 0.50
+|   |   |   |   |   |   |--- precip_mm <= 0.80
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- precip_mm >  0.80
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |--- is_morning_peak_1 >  0.50
+|   |   |   |   |   |   |--- trip_haversine_km <= 1.78
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- trip_haversine_km >  1.78
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |--- speed_kmh >  0.44
+|   |   |   |   |--- dow_cos <= 1.19
+|   |   |   |   |   |--- trip_haversine_km <= 0.87
+|   |   |   |   |   |   |--- temp_c <= -1.86
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- temp_c >  -1.86
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |--- trip_haversine_km >  0.87
+|   |   |   |   |   |   |--- trip_bearing_deg <= -0.34
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- trip_bearing_deg >  -0.34
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |--- dow_cos >  1.19
+|   |   |   |   |   |--- trip_haversine_km <= 1.70
+|   |   |   |   |   |   |--- wind_kph <= -0.03
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- wind_kph >  -0.03
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |--- trip_haversine_km >  1.70
+|   |   |   |   |   |   |--- hour_cos <= 0.57
+|   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- hour_cos >  0.57
+|   |   |   |   |   |   |   |--- truncated branch of depth 2

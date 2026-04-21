@@ -1,0 +1,74 @@
+{
+  "classification": {
+    "logreg": {
+      "accuracy": 0.8597549285658352,
+      "f1": 0.23856681058179338,
+      "roc_auc": 0.7063074101914911
+    },
+    "random_forest": {
+      "accuracy": 0.8459028300944265,
+      "f1": 0.30590911025839057,
+      "roc_auc": 0.7132780038696573
+    },
+    "xgboost": {
+      "accuracy": 0.8192800689094645,
+      "f1": 0.3401752881212229,
+      "roc_auc": 0.7118624743019137
+    },
+    "lightgbm": {
+      "accuracy": 0.8033285539543286,
+      "f1": 0.3399502485307911,
+      "roc_auc": 0.7076112323688776
+    },
+    "decision_tree": {
+      "accuracy": 0.7448500166063169,
+      "f1": 0.3198332919442435,
+      "roc_auc": 0.6633794381714672
+    },
+    "mlp": {
+      "accuracy": 0.8652431137789227,
+      "f1": 0.021450980392156864,
+      "roc_auc": 0.6271291768097798
+    }
+  },
+  "regression": {
+    "random_forest": {
+      "rmse": 0.1343367069889585,
+      "mae": 0.06803291711967421,
+      "r2": 0.00010159682749399934
+    },
+    "xgboost": {
+      "rmse": 0.1325638647547947,
+      "mae": 0.06547231822277728,
+      "r2": 0.02631878262573928
+    },
+    "mlp": {
+      "rmse": 0.1472230747275291,
+      "mae": 0.06962618354309355,
+      "r2": -0.2009315259790363
+    }
+  },
+  "best_classifier": "random_forest",
+  "best_regressor": "xgboost",
+  "regression_target": "log1p",
+  "model_weather_feature": "rain_flag",
+  "weather_features_included": [
+    "rain_flag"
+  ],
+  "weather_columns_in_dataset": [
+    "temp_c",
+    "precip_mm",
+    "wind_kph",
+    "humidity"
+  ],
+  "weather_coverage_pct": 100.0,
+  "report_metrics": {
+    "best_classifier": "random_forest",
+    "best_regressor": "xgboost",
+    "test_roc_auc": 0.7132780038696573,
+    "test_rmse": 0.1325638647547947,
+    "test_f1": 0.30590911025839057,
+    "surge_multiplier_test_min": 0.0,
+    "surge_multiplier_test_max": 1.501
+  }
+}

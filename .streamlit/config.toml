@@ -1,0 +1,7 @@
+# Streamlit theme: dashboard look (dark blue / grey)
+[theme]
+primaryColor = "#1E3A5F"
+backgroundColor = "#0E1117"
+secondaryBackgroundColor = "#262730"
+textColor = "#FAFAFA"
+font = "sans serif"
