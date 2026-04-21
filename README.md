@@ -23,6 +23,18 @@ This project predicts surge pricing events and multipliers for ride-hailing trip
 
 **Reproducibility.** Use Python 3.9 or 3.10. Key random seeds are set to `42`. For exact reproducibility install from `requirements-pinned.txt`: `pip install -r requirements-pinned.txt`. Run settings (sample size, train/val/test split) are in `src.config.RunConfig`.
 
+## Live app (Streamlit Cloud)
+
+- Dashboard: https://nairobi-surge-analysis-czq7b3kpgxgdttuq4csvud.streamlit.app/
+
+## Repository structure
+
+- `app/app.py`: Streamlit dashboard entry point
+- `src/`: data preprocessing + feature engineering + modeling utilities
+- `notebooks/`: analysis and modeling notebooks used for the thesis/report
+- `data/sample/trips_sample_rawschema.csv`: public-safe sample dataset used for the cloud demo
+- `outputs/`: generated artifacts (some are ignored by git due to size)
+
 ## Getting Started
 
 ### Prerequisites
@@ -186,7 +198,7 @@ The dataset has extreme class imbalance (~253 non-surge trips per surge event). 
 
 ## Notes
 
-- The project uses **real surge multipliers** from the `surged` column in the JSON data (not proxy values).
+- The project uses **real surge multipliers** from the `surged` column in the JSON data.
 - Notebook 02 trains on a sample by default for faster iteration; adjust `MODEL_N` in the notebook to train on the full dataset.
 - Weather data may not overlap with every trip date, so some weather features may be null.
 - All generated outputs land in `outputs/`.
@@ -197,7 +209,7 @@ The full ride-hailing trip dataset used in this project contains granular spatio
 
 The full ride-hailing trip dataset used in this project is approximately 1.4GB (JSON) and is not stored in this GitHub repository due to GitHub file-size limits and privacy/data‑protection considerations.
 
-- Access: The full dataset is available via a restricted OneDrive folder shared with the examiner: `https://usiu-my.sharepoint.com/:u:/g/personal/muabdule_usiu_ac_ke/IQDfuOM-ac_rRLh5QEAPWXwMAb3jHZApYKHtzk3Xl6ukGP4?e=iry9CJ`
+- Access: Available to supervisor
 
 - After downloading, place the file at:
   `data/New Files/trip_analysis_data.json`
@@ -217,7 +229,6 @@ A public, de‑identified sample is included in this repository for demonstratio
 
 This project used AI assistants in a supervised capacity during development for:
 
-- Drafting and refining report prose (author retains full responsibility for all content, citations, and conclusions).
 - Suggesting code structure for Python helpers (`src/`), notebooks, and the Streamlit dashboard; all code was reviewed, executed, and verified by the author.
 - Debugging error messages and proposing fixes.
 
