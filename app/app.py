@@ -67,23 +67,105 @@ def load_processed_data(max_rows: int | None = 200_000) -> pd.DataFrame:
 
 @st.cache_resource(show_spinner=True)
 def load_models():
-    models_dir = PROJECT_ROOT / "outputs" / "models"
-    metrics_path = PROJECT_ROOT / "outputs" / "metrics.json"
-    paths = {
-        "clf": models_dir / "clf_best.joblib",
-        "reg": models_dir / "reg_best.joblib",
-    }
-    out = {}
-    for k, p in paths.items():
-        out[k] = joblib.load(p) if p.exists() else None
-    out["regression_target"] = "raw"
-    if metrics_path.exists():
-        try:
-            meta = json.loads(metrics_path.read_text(encoding="utf-8"))
-            out["regression_target"] = meta.get("regression_target", "raw")
-        except Exception:
-            pass
-    return out
+    """
+    Loads the thesis models if present, else falls back to cloud-safe demo models.
+
+    Priority:
+    - outputs/models/clf_best.joblib + reg_best.joblib (thesis)
+    - outputs/models_cloud/clf_cloud.joblib + reg_cloud.joblib (small, committable)
+    - auto-train lightweight demo models from data/sample/trips_sample_rawschema.csv
+    """
+
+    def _load_thesis_models() -> dict:
+        models_dir = PROJECT_ROOT / "outputs" / "models"
+        metrics_path = PROJECT_ROOT / "outputs" / "metrics.json"
+        paths = {
+            "clf": models_dir / "clf_best.joblib",
+            "reg": models_dir / "reg_best.joblib",
+        }
+        out: dict = {"mode": "thesis"}
+        for k, p in paths.items():
+            out[k] = joblib.load(p) if p.exists() else None
+        out["regression_target"] = "raw"
+        if metrics_path.exists():
+            try:
+                meta = json.loads(metrics_path.read_text(encoding="utf-8"))
+                out["regression_target"] = meta.get("regression_target", "raw")
+            except Exception:
+                pass
+        return out
+
+    def _load_cloud_models() -> dict:
+        models_dir = PROJECT_ROOT / "outputs" / "models_cloud"
+        paths = {
+            "clf": models_dir / "clf_cloud.joblib",
+            "reg": models_dir / "reg_cloud.joblib",
+        }
+        out: dict = {"mode": "cloud_demo", "regression_target": "raw"}
+        for k, p in paths.items():
+            out[k] = joblib.load(p) if p.exists() else None
+        return out
+
+    def _train_cloud_models_from_sample() -> dict:
+        from sklearn.linear_model import LogisticRegression, Ridge
+        from sklearn.pipeline import Pipeline
+
+        from src.modeling import make_feature_lists, make_preprocessor
+
+        sample_csv_path = PROJECT_ROOT / "data" / "sample" / "trips_sample_rawschema.csv"
+        if not sample_csv_path.exists():
+            return {"mode": "cloud_demo", "clf": None, "reg": None, "regression_target": "raw"}
+
+        cols = ColumnMap()
+        cfg = ModelingConfig()
+
+        # Keep training lightweight on Cloud; cache_resource ensures this runs once per restart.
+        df, _meta = preprocess_trips(data_path=sample_csv_path, cols=cols, cfg=cfg, nrows=60_000)
+
+        # Ensure weather features exist so the inference row aligns.
+        if "rain_flag" not in df.columns:
+            df["rain_flag"] = 0
+        for col in ("temp_c", "precip_mm", "wind_kph", "humidity"):
+            if col not in df.columns:
+                df[col] = np.nan
+
+        if "surge_event" not in df.columns or "surge_multiplier" not in df.columns:
+            return {"mode": "cloud_demo", "clf": None, "reg": None, "regression_target": "raw"}
+
+        numeric, categorical = make_feature_lists(df)
+        pre = make_preprocessor(numeric, categorical)
+
+        X = df.copy()
+        y_clf = df["surge_event"]
+        y_reg_raw = df["surge_multiplier"].astype("float64")
+
+        clf = Pipeline(
+            steps=[
+                ("pre", pre),
+                ("model", LogisticRegression(max_iter=200, class_weight="balanced")),
+            ]
+        )
+        clf.fit(X, y_clf)
+
+        reg = Pipeline(
+            steps=[
+                ("pre", pre),
+                ("model", Ridge(alpha=1.0, random_state=42)),
+            ]
+        )
+        reg.fit(X, y_reg_raw)
+
+        return {"mode": "cloud_demo", "clf": clf, "reg": reg, "regression_target": "raw"}
+
+    thesis = _load_thesis_models()
+    if thesis.get("clf") is not None and thesis.get("reg") is not None:
+        return thesis
+
+    cloud = _load_cloud_models()
+    if cloud.get("clf") is not None and cloud.get("reg") is not None:
+        return cloud
+
+    return _train_cloud_models_from_sample()
 
 
 def main():
@@ -100,6 +182,11 @@ def main():
     with st.sidebar:
         st.subheader("Surge prediction")
         st.caption("Enter trip details and click Predict. Results appear in the **Predict** tab.")
+        if models.get("mode") == "cloud_demo":
+            st.info(
+                "Running in **Cloud demo model** mode: thesis models were not found, so a lightweight model "
+                "is used (loaded from `outputs/models_cloud/` or auto-trained from `data/sample/`)."
+            )
         now_utc = datetime.now(timezone.utc)
         if "trip_date" not in st.session_state:
             st.session_state.trip_date = now_utc.date()
@@ -134,7 +221,12 @@ def main():
 
         if st.button("Predict"):
             if models["clf"] is None or models["reg"] is None:
-                st.error("Models not found. Run `notebooks/02_modeling.ipynb` first.")
+                st.error(
+                    "Models not found. If you're on Streamlit Cloud, the app should auto-train small demo models "
+                    "from `data/sample/trips_sample_rawschema.csv` (make sure it is committed). "
+                    "For the full thesis setup, train locally and generate `outputs/models/clf_best.joblib` and "
+                    "`outputs/models/reg_best.joblib`."
+                )
             else:
                 row_raw = pd.DataFrame(
                     [

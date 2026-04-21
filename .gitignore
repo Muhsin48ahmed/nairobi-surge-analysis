@@ -30,6 +30,8 @@ outputs/trips_processed.parquet
 outputs/models/*.joblib
 *.parquet
 *.joblib
+!outputs/models_cloud/*.joblib
+!outputs/models_cloud/.gitkeep
 
 # Raw datasets (too large for Git; keep local only)
 data/New Files/trip_analysis_data.json
